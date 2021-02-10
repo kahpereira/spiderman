@@ -1,6 +1,7 @@
 // CONTAINER
 .container {
   max-width: 1440px;
+  height: 85vh;
 
   margin: 0 auto;
   padding: 36px 16px;
@@ -8,7 +9,20 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  // overflow: hidden;
+
+  @include responsive(){
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: auto;
+  }
 }
 
 .container-item1 {
@@ -21,8 +35,12 @@
 
 .spiderman {
   width: 150%;
-
   transform: translate3d(-180px,0,0);
+
+  @include responsive(){
+    width: 100%;
+    transform: translate3d(0,0,0);
+  }
 }
 
 .btn {

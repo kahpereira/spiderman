@@ -24,6 +24,10 @@ header {
   li {
     margin-left: 24px;
   }
+
+  @include responsive (){
+    display: none;
+  }
 }
 
 .logo {
@@ -79,5 +83,53 @@ header {
         transform: translate3d(0,-3px,0);
       }
     }
+  }
+
+  @include responsive (){
+    display: none;
+  }
+}
+
+.bx {
+  display: none;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 8px;
+
+  // #checkbox-menu {
+  //   position: absolute;
+  //   opacity: 0;
+  // }
+
+  label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    span {
+      position: absolute;
+      width: 90%;
+      height: 5%;
+      border-radius: 20px;  
+      background-color: $white;
+
+      &:nth-child(1){
+        top: 10px;
+      }
+      &:nth-child(2){
+        top: 20px;
+      }
+      &:nth-child(3){
+        top: 30px;
+      }
+    }
+  }
+
+  @include responsive(){
+    display: block;
   }
 }
