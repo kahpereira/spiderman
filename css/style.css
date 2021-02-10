@@ -317,6 +317,11 @@ header {
   border-radius: 8px;
 }
 
+.bx #checkbox-menu {
+  position: absolute;
+  opacity: 0;
+}
+
 .bx label {
   cursor: pointer;
   position: relative;
@@ -331,6 +336,8 @@ header {
   height: 5%;
   border-radius: 20px;
   background-color: #EDF1F7;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
 }
 
 .bx label span:nth-child(1) {
@@ -343,6 +350,24 @@ header {
 
 .bx label span:nth-child(3) {
   top: 30px;
+}
+
+.bx #checkbox-menu:checked ~ label span:nth-child(1) {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  top: 20px;
+}
+
+.bx #checkbox-menu:checked ~ label span:nth-child(2) {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  top: 20px;
+}
+
+.bx #checkbox-menu:checked ~ label span:nth-child(3) {
+  -webkit-transform: rotate(-405deg);
+          transform: rotate(-405deg);
+  top: 20px;
 }
 
 @media screen and (max-width: 960px) {

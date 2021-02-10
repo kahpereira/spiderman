@@ -98,10 +98,10 @@ header {
 
   border-radius: 8px;
 
-  // #checkbox-menu {
-  //   position: absolute;
-  //   opacity: 0;
-  // }
+  #checkbox-menu {
+    position: absolute;
+    opacity: 0;
+  }
 
   label {
     cursor: pointer;
@@ -116,6 +116,7 @@ header {
       height: 5%;
       border-radius: 20px;  
       background-color: $white;
+      transition: 1s ease;
 
       &:nth-child(1){
         top: 10px;
@@ -127,6 +128,19 @@ header {
         top: 30px;
       }
     }
+  }
+
+  #checkbox-menu:checked ~ label span:nth-child(1) {
+    transform: rotate(225deg);
+    top: 20px;
+  }
+  #checkbox-menu:checked ~ label span:nth-child(2) {
+    transform: rotate(225deg);
+    top: 20px;
+  }
+  #checkbox-menu:checked ~ label span:nth-child(3) {
+    transform: rotate(-405deg);
+    top: 20px;
   }
 
   @include responsive(){
