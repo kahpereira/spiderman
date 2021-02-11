@@ -41,6 +41,7 @@ p {
 .container {
   max-width: 1440px;
   height: 85vh;
+  overflow: none;
   margin: 0 auto;
   padding: 36px 16px;
   display: -webkit-box;
@@ -62,6 +63,7 @@ p {
         -ms-flex-direction: column;
             flex-direction: column;
     height: auto;
+    overflow: hidden;
   }
 }
 
@@ -92,17 +94,24 @@ p {
           align-items: flex-start;
 }
 
+@media screen and (max-width: 960px) {
+  .container-item1 {
+    width: 70%;
+  }
+}
+
 .spiderman {
-  width: 150%;
-  -webkit-transform: translate3d(-180px, 0, 0);
-          transform: translate3d(-180px, 0, 0);
+  width: 125%;
+  -webkit-transform: translate3d(-170px, 0, 0);
+          transform: translate3d(-170px, 0, 0);
 }
 
 @media screen and (max-width: 960px) {
   .spiderman {
-    width: 100%;
+    width: 80%;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
+    margin-left: 20px;
   }
 }
 
@@ -194,6 +203,57 @@ p {
 
 .btn-second:hover::after {
   width: 101%;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bg-video::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: -webkit-gradient(linear, left top, right top, color-stop(24.48%, #0B0C10), color-stop(54.09%, rgba(11, 12, 16, 0.8)), color-stop(77.6%, #0C0C10));
+  background: linear-gradient(90deg, #0B0C10 24.48%, rgba(11, 12, 16, 0.8) 54.09%, #0C0C10 77.6%);
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background: linear-gradient(225deg, #EA1D22 0%, #B31317 100%);
 }
 
 header {
@@ -679,5 +739,45 @@ header {
 .py-5 {
   padding-top: 128px;
   padding-bottom: 128px;
+}
+
+.logo-spider {
+  fill: transparent;
+  -webkit-animation: logo-spider 12s ease infinite alternate;
+          animation: logo-spider 12s ease infinite alternate;
+}
+
+@-webkit-keyframes logo-spider {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    fill: transparent;
+    stroke-dasharray: 100 0;
+  }
+  60%, 100% {
+    stroke-width: 0.3;
+    fill: #E5E9EF;
+  }
+}
+
+@keyframes logo-spider {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    fill: transparent;
+    stroke-dasharray: 100 0;
+  }
+  60%, 100% {
+    stroke-width: 0.3;
+    fill: #E5E9EF;
+  }
 }
 /*# sourceMappingURL=style.css.map */
